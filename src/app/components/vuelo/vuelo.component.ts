@@ -23,6 +23,7 @@ export class VueloComponent implements OnInit {
   this.vueloSVC.getVuelos().subscribe(res=>{
 
     this.dataSource.data= res;
+    console.log(res)
 
   })
 

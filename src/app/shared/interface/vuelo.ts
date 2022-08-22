@@ -47,3 +47,5 @@ export  interface VueloCreateI{
   ciudadesId: number[],
   aerolinieasId:number[]
 }
+
+

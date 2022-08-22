@@ -91,7 +91,7 @@ export class ModalComponent implements OnInit {
       numvuelo:this.data?.vuelo.numVuelo,
       horaSal:this.data?.vuelo.horaSalida,
       aerolinea:this.data?.vuelo.aerolineaDTOs[0]?.id,
-      origen:this.data?.vuelo.ciudadDTOs[0]?.id,
+      origen:this.data?.vuelo.ciudadDTOs[1]?.id,
       llegada:this.data?.vuelo.horaLlegada,
       estadoV:this.data?.vuelo.estadoVuelo
 
@@ -103,18 +103,20 @@ export class ModalComponent implements OnInit {
     const fecha= formValue.fechaV.toISOString();
     formValue.fechaV=fecha;
 
-    const sendData:VueloCreateI={
+
+    const sendData2:VueloCreateI={
       fechaVuelo:fecha,
       horaSalida:formValue.horaSal,
       horaLlegada:formValue.llegada,
       numVuelo:formValue.numvuelo,
       estadoVuelo: formValue.estadoV,
-      ciudadesId:[formValue.ciudad],
+      ciudadesId:[formValue.ciudad, formValue.origen],
       aerolinieasId:[formValue.aerolinea]
 
     }
+    console.log(sendData2)
 
-    this.vueloSVC.postVuelo(sendData).subscribe(res=>{
+    this.vueloSVC.postVuelo(sendData2).subscribe(res=>{
       console.log(res);
       location.reload();
     });
