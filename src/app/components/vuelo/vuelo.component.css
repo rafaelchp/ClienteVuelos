@@ -1,0 +1,46 @@
+table{
+  width: 100%;
+}
+
+.container-tabla{
+  padding: 5%;
+}
+.colorrow{
+  background : #D8EAED;
+
+
+}
+.celda2{
+  background:  #D8EAED;
+}
+.colorrow1{
+  background: #ffff;
+}
+.celda{
+  background : #D8EAED;
+
+}
+
+td.mat-cell{
+  font-size: 14px;
+  color: rgb(12, 12, 12);
+  font-weight: 500;
+}
+
+tr.mat-row {
+  height: 30px;
+
+ }
+ tr.mat-header-row
+ {
+  background : -webkit-linear-gradient(0deg, rgba(34, 56, 105, 1) 0%, rgba(16, 124, 175, 1) 50%,rgba(34, 56, 105, 1) 100%);
+
+ }
+ .mat-header-cell{
+  color: #ffff;
+}
+
+.add-vuelo{
+  margin-bottom: 2%;
+  background: #ffff;
+}

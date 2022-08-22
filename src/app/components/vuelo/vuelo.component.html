@@ -1,0 +1,47 @@
+
+<div class="container-tabla">
+  <button class="add-vuelo" color="primary"  mat-button (click)="openModal2()">Nuevo Vuelo</button>
+
+<table mat-table [dataSource]="dataSource" >
+
+  <ng-container matColumnDef="Destino">
+    <th mat-header-cell *matHeaderCellDef> Destino </th>
+    <td mat-cell *matCellDef="let element">{{element.ciudadDTOs[0].ciudad }} </td>
+
+  </ng-container>
+  <ng-container matColumnDef="NumVuelo">
+    <th mat-header-cell *matHeaderCellDef> Vuelo </th>
+    <td mat-cell *matCellDef="let element">{{element.numVuelo  }} </td>
+
+  </ng-container>
+  <ng-container matColumnDef="HoraSaila">
+    <th mat-header-cell *matHeaderCellDef> Hora salida </th>
+    <td mat-cell *matCellDef="let element">{{element.horaSalida  }} </td>
+
+  </ng-container>
+
+  <ng-container matColumnDef="Aerolinea">
+    <th mat-header-cell *matHeaderCellDef> Aerolinea </th>
+    <td mat-cell *matCellDef="let element">{{element.aerolineaDTOs[0].nombreAerolinea  }} </td>
+
+  </ng-container>
+
+  <ng-container matColumnDef="action">
+    <th mat-header-cell *matHeaderCellDef> Accion </th>
+
+    <td mat-cell *matCellDef="let element"> <button  color="primary"  mat-button (click)="openModal(element)"><mat-icon>search</mat-icon></button></td>
+  </ng-container>
+
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true">
+
+  </tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns; let index"
+    [ngClass]="{colorrow1: index.id%2 ==0, celda2:index.id%2!=0}">
+
+
+  </tr>
+</table>
+
+
+</div>

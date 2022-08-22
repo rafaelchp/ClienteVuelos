@@ -1,0 +1,69 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>{{data?.title}}</mat-card-title>
+
+    </mat-card-header>
+
+    <mat-card-content class="content-card">
+      <form [formGroup]="form" class="container-form-eCF">
+
+        <mat-form-field class="full-width-input">
+          <mat-label>Seleccionar fecha</mat-label>
+          <input matInput formControlName="fechaV"
+           [matDatepicker]="picker" required>
+          <mat-hint>YYYY/MM/DD</mat-hint>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field class="full-width-input">
+          <mat-label>Ciudad destino</mat-label>
+          <mat-select formControlName="ciudad" required>
+            <mat-option [value]="ciudad.id" *ngFor="let ciudad of ciudades" >{{ciudad.ciudad}}</mat-option>
+        </mat-select>
+        </mat-form-field>
+        <mat-form-field class="full-width-input">
+          <input matInput formControlName="numvuelo"
+           placeholder="Numero de vuelo" required/>
+        </mat-form-field>
+        <mat-form-field class="full-width-input">
+          <input matInput formControlName="horaSal"
+           placeholder="H. salida" required/>
+        </mat-form-field>
+        <mat-form-field class="full-width-input">
+
+
+           <mat-label>Aerolinia</mat-label>
+           <mat-select formControlName="aerolinea" required>
+               <mat-option [value]="aero.id" *ngFor="let aero of aerolinea" >{{aero.nombreAerolinea}}</mat-option>
+           </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="full-width-input">
+
+          <mat-label>Ciudad Origen</mat-label>
+        <mat-select formControlName="origen" required>
+            <mat-option [value]="ciudad.id" *ngFor="let ciudad of ciudades" >{{ciudad.ciudad}}</mat-option>
+        </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="full-width-input">
+          <input matInput formControlName="llegada"
+           placeholder="H. llegada" required/>
+        </mat-form-field>
+
+
+        <mat-form-field class="full-width-input">
+          <input matInput formControlName="estadoV"
+           placeholder="Estado de Vuelo" required/>
+        </mat-form-field>
+      </form>
+    </mat-card-content>
+    <div *ngIf="vuelo.id==0" align="center">
+      <button mat-flat-button class="btn-new" (click)="onSaveData()" [disabled]="form.invalid">
+        <mat-icon>save</mat-icon>
+      </button>
+    </div>
+
+</mat-card>
+
