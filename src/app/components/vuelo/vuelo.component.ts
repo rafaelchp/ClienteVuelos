@@ -41,7 +41,7 @@ export class VueloComponent implements OnInit {
     id: 0,
     numVuelo: ''
   }):void{
-    console.log(vuelo);
+
 
 
     const dialogRef = this.dialog.open(ModalComponent,{
