@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_MOMENT_DATE_ADAPTER_OPTIONS, MomentDateAdapter } from '@angular/material-moment-adapter';
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
-import { CiudadesService } from '../../service/ciudades.service';
+
 import { AerolineaI, vueloAerolineaI, VueloCreateI, vueloI } from 'src/app/shared/interface/vuelo';
 import { VueloService } from '../../service/vuelo.service';
 
@@ -47,7 +47,7 @@ export class ModalComponent implements OnInit {
   vuelo!:vueloI;
 
   constructor( private fb: FormBuilder,
-              private ciudadesSVC:CiudadesService,
+
               private vueloSVC: VueloService,
     @Inject(MAT_DIALOG_DATA) public data: any) { }
 
